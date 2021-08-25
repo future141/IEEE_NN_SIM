@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/home/anotu/miniconda3/envs/torch1.8/bin/python"
+}
