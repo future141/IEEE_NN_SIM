@@ -183,6 +183,10 @@ plt.figure(4)
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "sans-serif"})
+plt.rc('text.latex', preamble=r'\usepackage{amsmath,amssymb}')
+params= {'text.latex.preamble' : [r'\usepackage{yhmath}']}
+plt.rcParams.update(params)
+
 plt.subplots(nrows=3, ncols=1, sharex=True)
 plt.subplot(2, 1, 1)
 plt.step(t,r[0,:],'r',linewidth=1.15,linestyle= 'dotted',label = '$x^*_1$')
@@ -193,8 +197,8 @@ plt.step(t[0:T_MAX-1],u[0,:],'g',linewidth=1.15,label = '$u$')
 plt.legend(loc = 'right')
 plt.xticks([])
 plt.subplot(2, 1, 2)
-plt.step(t,ene[0,:],'r',label = 'Riemannian Energy')
-plt.step(t,ene_bnd[0,:],'b',label = 'Riemannian Energy Boundary')
+plt.step(t,ene[0,:],'r',label = '$d(\gamma)$')
+plt.step(t,ene_bnd[0,:],'b',label = '$\wideparen{d(\gamma)}$')
 # plt.legend(loc = 'right')
 plt.legend()
 
